@@ -1,0 +1,4 @@
+#### Requirements for py flask env  ####
+flask-restful
+psycopg2
+waitress
