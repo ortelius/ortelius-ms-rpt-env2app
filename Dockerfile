@@ -1,9 +1,6 @@
-FROM python:3.8-alpine
-ENV PYTHONUNBUFFERED True
-EXPOSE 5000
+FROM tiangolo/meinheld-gunicorn-flask:python3.8-alpine3.11
 WORKDIR /app
-ADD . /app
-
+COPY . /app
 RUN apk add gcc libc-dev g++ libffi-dev libxml2 unixodbc-dev postgresql-dev; \
-    pip install -r requirements.txt
-CMD ["waitress-serve","--port=5000", "msapi:app"]
+    pip install -r requirements.txt; \
+    pip install --upgrade meinheld

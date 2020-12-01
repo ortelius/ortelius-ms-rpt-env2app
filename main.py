@@ -3,7 +3,6 @@ import os
 import psycopg2
 from flask import Flask
 from flask_restful import Api, Resource
-from waitress import serve
 
 # Init Flask
 app = Flask(__name__)
